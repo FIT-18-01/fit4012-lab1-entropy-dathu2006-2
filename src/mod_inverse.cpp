@@ -43,15 +43,13 @@ int mod_inverse(int a, int m) {
 
 int main() {
     int a, m;
+    // Chỉ đọc dữ liệu, không in ra dòng "Nhap a, m"
     if (!(cin >> a >> m)) return 0;
 
     int result = mod_inverse(a, m);
     
-    if (result == -1) {
-        cout << "Nghich dao modulo khong ton tai." << endl;
-    } else {
-        cout << result << endl;
-    }
+    // Chỉ in ra kết quả số, không kèm giải thích
+    cout << result << endl;
 
     return 0;
 }

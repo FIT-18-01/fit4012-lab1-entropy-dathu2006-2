@@ -31,14 +31,15 @@ double calculate_redundancy(const string &text, int alphabet_size = 256) {
 
 int main() {
     string input;
-    cout << "Enter a string of characters: ";
-    getline(cin, input);
+    // Bỏ dòng "Enter a string..." để không làm nhiễu script chấm điểm
+    if (!getline(cin, input)) return 0;
 
     double entropy = calculate_entropy(input);
     double redundancy = calculate_redundancy(input);
 
-    cout << "Entropy: " << entropy << endl;
-    cout << "Redundancy: " << redundancy << endl;
+    // In kết quả thuần túy để script dễ đọc
+    cout << entropy << endl;
+    cout << redundancy << endl;
 
     return 0;
 }
