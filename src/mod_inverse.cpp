@@ -1,6 +1,8 @@
 #include <iostream>
 
-// Hàm gcd có sẵn, giữ nguyên theo yêu cầu 
+using namespace std;
+
+// Hàm gcd có sẵn, giữ nguyên theo yêu cầu [cite: 83]
 int gcd(int a, int b) {
     while (b != 0) {
         int temp = b;
@@ -10,7 +12,7 @@ int gcd(int a, int b) {
     return a;
 }
 
-// Hàm extended_euclid có sẵn, giữ nguyên theo yêu cầu 
+// Hàm extended_euclid có sẵn, giữ nguyên theo yêu cầu [cite: 83]
 int extended_euclid(int a, int b, int &x, int &y) {
     if (b == 0) {
         x = 1; y = 0;
@@ -39,4 +41,20 @@ int mod_inverse(int a, int m) {
     
     // Đảm bảo kết quả là số dương trong khoảng [0, m-1]
     return (x % m + m) % m;
+}
+
+int main() {
+    int a, m;
+    // Đảm bảo nhập đúng thứ tự a và m [cite: 85]
+    if (!(cin >> a >> m)) return 0;
+
+    int result = mod_inverse(a, m);
+    
+    if (result == -1) {
+        cout << "Nghich dao modulo khong ton tai." << endl; [cite: 93, 107]
+    } else {
+        cout << result << endl; [cite: 92, 107]
+    }
+
+    return 0;
 }
