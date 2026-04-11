@@ -42,6 +42,12 @@ int main() {
     cout << "Nhap a, m: ";
     cin >> a >> m;
 
+    // Thêm kiểm tra các trường hợp biên
+    if (a <= 0 || m <= 0) {
+        cout << "a và m phải là các số nguyên dương." << endl;
+        return -1;
+    }
+
     if (gcd(a, m) != 1) {
         cout << "Khong ton tai nghich dao modulo vi gcd(a, m) != 1.\n";
         return 0;
@@ -51,5 +57,13 @@ int main() {
     cout << "Nghich dao cua " << a << " mod " << m << " la: " << inv << '\n';
     cout << "Kiem tra: " << a << " * " << inv << " % " << m
          << " = " << (1LL * a * inv % m) << '\n';
+
+    int result = mod_inverse(a, m);
+    if (result == -1) {
+        cout << "Nghịch đảo modulo không tồn tại." << endl;
+    } else {
+        cout << "Nghịch đảo modulo của " << a << " theo modulo " << m << " là: " << result << endl;
+    }
+
     return 0;
 }
