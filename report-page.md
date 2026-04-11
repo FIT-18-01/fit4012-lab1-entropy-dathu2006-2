@@ -25,4 +25,6 @@ Tóm tắt ngắn gọn mục tiêu của bài lab.
 | 6 | 9 | Không tồn tại | Không tồn tại |
 
 ## 4. Kết luận
-Nêu ngắn gọn em học được gì từ bài lab, khó khăn lớn nhất là gì, và điều gì giúp em hiểu rõ hơn về entropy hoặc modulo inverse.
+- Em đã hiểu rõ hơn về entropy và cách tính toán.
+- Em đã học được cách triển khai thuật toán Euclid mở rộng để tìm nghịch đảo modulo.
+- Việc kiểm thử và ghi log giúp em phát hiện và sửa lỗi hiệu quả.

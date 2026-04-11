@@ -37,7 +37,8 @@ int main() {
     double entropy = calculate_entropy(input);
     double redundancy = calculate_redundancy(input);
 
-    cout << "Entropy: " << entropy << '\n';
-    cout << "Redundancy: " << redundancy << '\n';
+    cout << "Entropy: " << entropy << endl;
+    cout << "Redundancy: " << redundancy << endl;
+
     return 0;
 }
