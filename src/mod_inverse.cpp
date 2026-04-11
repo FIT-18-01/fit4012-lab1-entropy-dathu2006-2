@@ -29,34 +29,23 @@ int mod_inverse(int a, int m) {
     int x, y;
     int g = extended_euclid(a, m, x, y);
     if (g != 1) {
-        // Nghịch đảo không tồn tại nếu GCD(a, m) != 1
+        // Nếu GCD(a, m) != 1, nghịch đảo không tồn tại
         return -1;
-    } else {
-        // Đảm bảo x là số dương
-        return (x % m + m) % m;
     }
+    // Đảm bảo x là số dương
+    x = (x % m + m) % m;
+    return x;
 }
 
 int main() {
-    int a = 0, m = 0;
+    int a, m;
     cout << "Nhap a, m: ";
     cin >> a >> m;
 
-    // Thêm kiểm tra các trường hợp biên
     if (a <= 0 || m <= 0) {
         cout << "a và m phải là các số nguyên dương." << endl;
-        return -1;
+        return 1;
     }
-
-    if (gcd(a, m) != 1) {
-        cout << "Khong ton tai nghich dao modulo vi gcd(a, m) != 1.\n";
-        return 0;
-    }
-
-    int inv = mod_inverse(a, m);
-    cout << "Nghich dao cua " << a << " mod " << m << " la: " << inv << '\n';
-    cout << "Kiem tra: " << a << " * " << inv << " % " << m
-         << " = " << (1LL * a * inv % m) << '\n';
 
     int result = mod_inverse(a, m);
     if (result == -1) {
