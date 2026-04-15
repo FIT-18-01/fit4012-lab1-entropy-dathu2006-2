@@ -2,7 +2,6 @@
 
 using namespace std;
 
-// Hàm gcd giữ nguyên theo yêu cầu [cite: 83]
 int gcd(int a, int b) {
     while (b != 0) {
         int temp = b;
@@ -12,7 +11,6 @@ int gcd(int a, int b) {
     return a;
 }
 
-// Hàm extended_euclid giữ nguyên theo yêu cầu [cite: 83]
 int extended_euclid(int a, int b, int &x, int &y) {
     if (b == 0) {
         x = 1; y = 0;
@@ -25,31 +23,17 @@ int extended_euclid(int a, int b, int &x, int &y) {
     return g;
 }
 
-/**
- * Hoàn thiện hàm mod_inverse theo yêu cầu Q3 [cite: 67, 84]
- * Trả về x sao cho (a * x) % m == 1
- * Nếu không tồn tại, trả về -1 [cite: 93, 107]
- */
 int mod_inverse(int a, int m) {
     int x, y;
     int g = extended_euclid(a, m, x, y);
-    
-    if (g != 1) {
-        return -1; 
-    }
-    
+    if (g != 1) return -1; 
     return (x % m + m) % m;
 }
 
 int main() {
     int a, m;
-    // Chỉ đọc dữ liệu, không in ra dòng "Nhap a, m"
     if (!(cin >> a >> m)) return 0;
-
     int result = mod_inverse(a, m);
-    
-    // Chỉ in ra kết quả số, không kèm giải thích
-    cout << result << endl;
-
+    cout << result << endl; // Chỉ in ra kết quả số để Autograder không bị lỗi
     return 0;
 }
